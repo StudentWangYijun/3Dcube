@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+
+
+@keyframes rotate-frame{
+   0%{
+		transform: rotateX(0deg);	
+	}
+	100%{
+		transform: rotateX(360deg);	
+	}	
+}
+.container{
+	width: 450px;
+	height: 450px;
+	transform-style:preserve-3d;
+  animation: rotate-frame 6s infinite linear;
+  transform-origin: center center 75px;
+}
+
+.side{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.9);
+  text-align: center;
+  line-height: 150px;
+}
+
+.top{
+  left: 150px;
+  top: 0;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+}
+
+.bottom{
+  left: 150px;
+  top: 300px;
+  transform: rotateX(90deg);
+  transform-origin: top;
+}
+
+.left{
+  left: 0;
+  top: 150px;
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+
+.right{
+  left: 300px;
+  top: 150px;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+
+.front{
+  left: 150px;
+  top: 150px;
+  transform: translateZ(150px);
+}
+
+.back{
+  left: 150px;
+  top: 150px;
+}
+
+</style>
+</head>
+<body>
+        
+             <div class="container"> 
+                <div class="side top">上</div>
+                <div class="side bottom">下</div>
+                <div class="side left">左</div>
+                <div class="side right">右</div>
+                <div class="side front">前</div>
+                <div class="side back">后</div>
+             </div>
+       
+</body>
+</html>

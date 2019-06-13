@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="5.300940.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+</head>
+<body>
+    <div class="container bounce rotate">
+        <div class="side top "></div>
+        <div class="side bottom "></div>
+        <div class="side left "></div>
+        <div class="side right "></div>
+        <div class="side front">
+            <img src="003.jpg">
+            <div class="overlay1"></div>
+        </div>
+        <div class="side back">
+            <img src="004S.jpg">
+            <div class="overlay2"></div>
+        </div>
+    </div>
+
+    <div class="button-top">
+        <div class="save">保存</div>
+        <div class="music"><img src="music.png"></div>
+    </div>
+    <div class="button-bottom">
+        <div class="templet bm">换模板</div>
+        <div class="submitpics bm">上传照片</div>
+        <div class="shange bm">换音乐</div>
+        <div class="setup bm">设置</div>
+    </div>    
+    <input id="arrow" type="button" value="点我" />
+
+    <script type="text/javascript">
+        $(function () {
+            $("#arrow").mouseenter(  
+            function () { $(".container").slideDown(1000) } 
+        ).click(function () {  
+            var div1 = $(".container"); //获取jquery对象
+            var id = setInterval(function () { div1.animate({ top: "+=30" }, 100).animate({ top: "-=30" }, 100) 
+            .animate({ top: "+=20" }, 100).animate({ top: "-=20" }, 100)  .animate({ top: "+=10" }, 100).animate({ top: "-=10" }, 100); }, 1000)
+           ; //让图片上下浮动，重复执行
+            div1.click(function () {
+                clearInterval(id); //清除定时器
+                div1.stop(); //停止动画 2参数，1立即停止动画，第二个清除动画列表 bool
+            });
+        });
+        });
+    </script>
+</body>
+</html>
